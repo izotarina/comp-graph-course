@@ -1,24 +1,24 @@
-const cview = new CodeViewer();
+const showView = new ShowView();
 
-$(window).resize(() => cview.updateCanvasSize());
+$(window).resize(() => showView.updateCanvasSize());
 
-function CodeViewer() {    
+function ShowView() {    
 	this.TIMER = 0;
 	this.WAIT = 1000;
 }
 
-CodeViewer.prototype.showView = function() {
+ShowView.prototype.showView = function() {
 	this.updateCanvasSize();
 }
 
-CodeViewer.prototype.updateCanvasSize = function() {
+ShowView.prototype.updateCanvasSize = function() {
     c_width = $('#canvasContainer').width();
     c_height = $('#canvasContainer').height();
     $('canvas').attr('width',c_width);
     $('canvas').attr('height',c_height);
 }
 
-CodeViewer.prototype.updateGUI = function() {
+ShowView.prototype.updateGUI = function() {
     const canvas_container = document.getElementById('canvasContainer');
 	const bottom = document.getElementById('bottom');
      
@@ -32,11 +32,11 @@ CodeViewer.prototype.updateGUI = function() {
 }
 
 
-CodeViewer.prototype.run = function() {	
+ShowView.prototype.run = function() {	
 	this.TIMER = setInterval(() => this.execute(), this.WAIT);
 }
 
-CodeViewer.prototype.execute = function(){
+ShowView.prototype.execute = function(){
 	if (this.TIMER) {
         clearInterval(this.TIMER);
     }

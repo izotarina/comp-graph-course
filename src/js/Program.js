@@ -54,7 +54,6 @@ const Program = {
         prg.aVertexPosition  = gl.getAttribLocation(prg, "aVertexPosition");
         gl.enableVertexAttribArray(prg.aVertexPosition);
         
-        prg.aVertexNormal    = gl.getAttribLocation(prg, "aVertexNormal");
         prg.aVertexColor     = gl.getAttribLocation(prg, "aVertexColor");
         
         prg.uPMatrix         = gl.getUniformLocation(prg, "uPMatrix");
